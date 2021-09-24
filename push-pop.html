@@ -1,0 +1,64 @@
+<script>
+  const mx_size = 30;
+  class stack {
+    constructor() {
+      this.list = new Array(mx_size);
+      this.top = -1;
+    }
+
+    push(item) {
+      if (this.top >= mx_size) {
+        console.log("overflow");
+        return false;
+      }
+      this.list[++this.top] = item;
+    }
+    pop() {
+      if (this.isEmpty()) {
+        console.log("underflow");
+        return false;
+      }
+      let item = this.list[this.top];
+      delete this.list[this.top];
+      this.top--;
+      return item;
+    }
+    peek() {
+      if (this.top < 0) {
+        console.log("underflow");
+        return false;
+      }
+      return this.list[this.top];
+    }
+    isEmpty() {
+      return this.top < 0;
+    }
+  }
+
+  //const stack = new Stack();
+  const text = "HELLO";
+
+  for (let i = 0; i < text.length; i++) {
+    stack.push(text.charAt(i));
+  }
+
+  let reversedText = "";
+  while (stack.isEmpty()) {
+    console.log("popped");
+    console.log(stack);
+    reversedText += stack.pop();
+  }
+  console.log(reversedText);
+
+  //javascript array stack methods
+
+  const text1 = "HELLO";
+  const jsStack = [];
+
+  for (let i = 0; i < text1.length; i++) {
+    jsStack.push(text1.charAt(i));
+  }
+  let result1 = "";
+  while (jsStack.length) result1 += jsStack.pop();
+  console.log(result1);
+</script>
