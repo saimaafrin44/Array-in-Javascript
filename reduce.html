@@ -1,0 +1,21 @@
+<script>
+  const array = [1, 2, 3, 4, 5];
+
+  // sum
+  function reduce(accumulator, currentValue) {
+    return accumulator + currentValue;
+  }
+  const sum = array.reduce(reduce);
+  console.log(sum);
+
+  //average
+
+  const avg = array.reduce((accumulator, currentValue, index, arr) => {
+    accumulator += currentValue;
+    if (index === arr.length - 1) {
+      return accumulator / arr.length;
+    }
+    return accumulator;
+  });
+  console.log(avg);
+</script>
