@@ -1,7 +1,7 @@
 <script>
   let texts = ["hello hi", "saima afrin"];
 
-  function reuse(arr, logic) {
+  function reuseAndMap(arr, logic) {
     const result = [];
     for (let i = 0; i < arr.length; i++) {
       logic(arr[i], i, arr);
@@ -17,4 +17,6 @@
   console.log(texts);
 
   const lengths = reuseAndMap(texts, (value) => value.length);
+
+  console.log(lengths);
 </script>
