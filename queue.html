@@ -1,0 +1,46 @@
+<script>
+  const mx_size = 39;
+  class queue {
+    constructor() {
+      this.front = 0;
+      this.rear = 0;
+      this.queue = new Array(mx_size);
+    }
+
+    enqueue(item) {
+      if (this.rear === mx_size) {
+        console.log("full");
+        return false;
+      }
+      this.queue[this.rear++] = item;
+    }
+    dequeue() {
+      if (this.front === this.rear) {
+        console.log("empty");
+        return;
+      }
+      const item = this.queue[this.front];
+      for (let i = 0; i < this.rear - 1; i++) {
+        this.queue[i] = this.queue[i + 1];
+      }
+      delete this.queue[--this.rear];
+      return;
+    }
+    showQueue() {
+      if (this.front === this.rear) {
+        console.log("empty");
+        return;
+      }
+      for (let i = this.front; i < this.rear; i++) {
+        console.log(this.queue);
+      }
+    }
+    next() {
+      if (this.front === this.rear) {
+        console.log("empty");
+        return;
+      }
+      return this.queue[this.front];
+    }
+  }
+</script>
