@@ -1,0 +1,26 @@
+<script>
+  const studentArray = [
+    {
+      id: 1,
+      name: "saima",
+      cgpa: 2.0,
+    },
+    {
+      id: 2,
+      name: "saima2",
+      cgpa: 3.0,
+    },
+  ];
+
+  const email = studentArray
+    .filter((value) => value.cgpa < 3.0)
+    .map((value) => {
+      return {
+        ...value,
+        title: "result",
+        msg: "low cgpa",
+      };
+    });
+
+  console.log(email);
+</script>
