@@ -1,0 +1,26 @@
+<script>
+  const studentArray = [
+    {
+      id: 1,
+      name: "saima",
+      cgpa: 2.0,
+    },
+    {
+      id: 2,
+      name: "saima2",
+      cgpa: 3.0,
+    },
+  ];
+
+  const bestResult = studentArray.every((value) => value.cgpa > 3);
+  console.log(bestResult);
+
+  if (bestResult) {
+    console.log("100%");
+  } else {
+    console.log("false");
+  }
+
+  const atleastOne = studentArray.some((value) => value.cgpa > 3);
+  console.log(atleastOne);
+</script>
