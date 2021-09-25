@@ -1,0 +1,29 @@
+<script>
+    let array = [1, 3, 4, 56, 67, 87, 34, 43];
+    const binarySearch = (arr, key) => {
+        let lowest = 0
+        let highest = arr.length - 1
+
+        console.log("lowest : ", lowest)
+        console.log("highest : ", highest)
+
+        while (lowest <= highest){
+            let mid = Math.floor((lowest + highest) / 2)
+            console.log("mid", mid)
+            if (arr[mid] === key) return mid;
+            console.log(mid)
+
+            if (arr[mid] < key)  lowest = mid + 1;
+            if (arr[mid] > key)  highest = mid - 1;
+
+            
+
+        }
+        return -1;
+    };
+
+    array.sort((a,b) => a-b)
+    console.log(array);
+    const index = binarySearch(array, 3);
+    console.log("index",index);
+</script>
