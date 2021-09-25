@@ -1,0 +1,55 @@
+<script>
+    const arr = [1, 3, 4, 6, 7, 67, 98, 56, 45];
+    const team = [
+        {
+            id : 1,
+            name : "bmofij"
+        },
+        {
+            id : 4,
+            name : "amofij2"
+        },
+        {
+            id : 6,
+            name : "dmofij3"
+        },
+        {
+            id : 2,
+            name : "cmofij4"
+        },
+        {
+            id : 8,
+            name : "vmofij6"
+        },
+    ];
+
+    const linearSearch = (arr, key) => {
+        for (let i = 0; i < arr.length; i++){
+            if (arr[i] === key){
+                return i
+            }
+        }
+        return -1;
+    };
+
+    const s1 = linearSearch(arr, 98);
+    console.log(s1);
+
+    const s2 = linearSearch(team, 'cmofij4');
+    console.log(s2);
+
+
+    const linearSearchCB = (arr, cb) => {
+        for(let i = 0; i < arr.length; i++) {
+            if (cb(arr[i])){
+                return i;
+            }
+        }
+        return -1;
+    };
+
+    const s3 = linearSearchCB(team, item => item.name === "cmofij4");
+
+
+    console.log(s3);
+</script>
