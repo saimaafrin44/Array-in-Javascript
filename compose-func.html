@@ -1,0 +1,30 @@
+<script>
+    // compose 
+
+    const add5 = (n) => n+5;
+    const times2 = (n) => n*2;
+
+    const n = 4
+    const x = times2(add5(n));
+    console.log(x);
+
+    //pipe function
+    const pipe = (...fns) => x => fns.reduce((v, f) => f(v), n);
+    const r1 = pipe(add5, times2);
+
+    console.log(r1);
+
+    //compose function - long way
+    const compose = (...fns) => {
+        return (x) => {
+            return fns.reduce((v,f) => f(v),x);
+        };
+
+    };
+    const r2 = compose(add5, times2)(n);
+    console.log(r2)
+
+    
+
+    
+</script>
