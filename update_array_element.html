@@ -1,0 +1,30 @@
+<script>
+    let arr = new Array(12)
+    //fill array and update
+
+    arr.fill(false);
+    console.log(arr);
+
+
+    const response = new Array(12);
+    response.fill(true);
+
+    for(let i = 0; i < response.length; i++){
+        const rand = Math.floor(Math.random() * 10 + 1)
+        response[i] = rand > 5 ? 'X' : 'O';
+    }
+
+    console.log(response);
+
+    //array is mutable
+     function updateArray(arr){
+         for(let i = 0; i < arr.length; i++){
+             arr[i] = `${i+1} . ${arr[i]}`;
+         }
+         return arr;
+     }
+     constupdatedArr = updateArray(arr)
+     console.log(arr)
+
+
+</script>

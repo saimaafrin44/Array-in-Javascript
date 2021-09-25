@@ -1,20 +1,20 @@
 <script>
 
-const arr = [5, 2, 7, 4, 3];
+const arr = [5, 1, 7, 0, 3];
 const n = arr[3];
 const m = arr[2];
 
 const x = 1.
 y = 0;
 
-console.log(m, n, arr[x], arr[x]+arr[y], arr[x+y+1]);
-
+//console.log(m, n, arr[x], arr[x]+arr[y], arr[x+y+1]);
+console.log("array : "+arr)
 
 // Simple Traverse
 
 for(let i = 0; i < arr.length; i++){
 
-    console.log(arr[i])
+    //console.log(arr[i])
      
 }
 
@@ -24,8 +24,8 @@ let sum = 0
 for (let i = 0; i < arr.length; i++){
     sum+= arr[i]; 
 }
-console.log(sum);
-console.log(sum / arr.length);
+console.log("sum value : "+sum);
+console.log("average value : "+sum / arr.length);
 
 
 
@@ -37,6 +37,49 @@ for(let i = 1; i < arr.length; i++){
         largestNumber = arr[i];
     }
 }
-console.log(largestNumber)
+console.log("largest number : "+largestNumber)
+
+// find smallest number
+
+let smallestNumber = arr[0];
+let newArr = [];
+for(let i = 1; i < arr.length; i++){
+    if(arr[i] <= smallestNumber){
+        smallestNumber = arr[i];
+
+        
+
+    }
+    newArr.push(smallestNumber)
+
+    let secsmallestNum = newArr[newArr.length];
+    console.log(secsmallestNum)
+    for(let j = 0; j < newArr.length; j++){
+        
+        if(newArr[j] > secsmallestNum){
+            secsmallestNum = newArr[j];
+            
+        }
+    }
+    
+    
+    
+}
+
+
+console.log("2nd largest value : " +secsmallestNum)
+
+console.log("new array",newArr)
+console.log(newArr.length)
+//console.log("second smallest number : ", newArr[newArr.length])
+
+
+//console.log("smallest number : "+smallestNumber);
+
+
+//find 2nd largest number
+
+//let secLargestNum = arr[0];
+
 
 </script>
