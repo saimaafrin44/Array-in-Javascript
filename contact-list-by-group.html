@@ -1,0 +1,69 @@
+<script>
+    let contactList = [
+        {
+            name : 'saima',
+            phone : '01682991306'
+        },
+        {
+            name : 'saima1',
+            phone : '01682991301'
+        },
+        {
+            name : 'saima2',
+            phone : '01682991302'
+        },
+        {
+            name : 'saima3',
+            phone : '01682991303'
+        },
+        {
+            name : 'saima4',
+            phone : '01682991304'
+        },
+        {
+            name : 'saima5',
+            phone : '01682991305'
+        },
+        {
+            name : 'saima7',
+            phone : '01682991307'
+        },
+    ];
+
+
+    contactList.sort((a,b) => {
+        if (a.name > b.name) return 1;
+        if (a.name < b.name) return -1;
+        return 0;
+    });
+
+    const group = contactList.reduce((acc, cur) => {
+
+        let groupName = cur.name.charAt(0).toUpperCase()
+        if(acc[groupName]) {
+            acc[groupName].push(cur)
+        }
+        else{
+            acc[groupName] = [cur]
+        }
+
+        return acc
+
+    }, {})
+
+    const displayList = group => {
+        console.log('Displaying contact information');
+        console.log('-------------------------------');
+
+        const keys = Object.keys(group);
+        keys.forEach((key) => {
+            console.log(`group: ${keys}`);
+            console.table(group)
+        })
+
+    };
+    displayList(group)
+
+
+    //console.log(group)
+</script>
