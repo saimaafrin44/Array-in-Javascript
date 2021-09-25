@@ -1,0 +1,55 @@
+<script>
+    // promise chain
+    function createPromise(id){
+        const randTime = Math.floor(Math.random() * 2000 + 100);
+        return new Promise(resolve => {
+            setTimeout(() => {
+                console.log(`processing ${id} - Time ${randTime}`);
+                resolve(id);
+            }, randTime)
+        });
+    }
+
+    const ids = [1,2,3,4,5];
+
+    const result = ids.reduce((acc, cur) => {
+        return acc.then(() => {
+            return createPromise(cur)
+
+        })
+    }, Promise.resolve());
+
+    result.then(() => {
+        console.log('done!!')
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
