@@ -1,0 +1,73 @@
+<script>
+    const js = {
+        name: 'js course',
+        author : {
+            name : 'saima'
+        },
+        contents : {
+            video : {
+                count : 230
+            }
+        }
+    };
+
+    const node = {
+        name: 'node course',
+        author : {
+            name : 'saima'
+        },
+        contents : {
+            video : {
+                count : 230
+            },
+            article : {
+                count : 20
+            }
+        }
+    };
+
+   
+
+    const react = {
+        name: 'react course',
+        author : {
+            name : 'saima'
+        },
+        contents : {
+            
+            article : {
+                count : 20
+            }
+        }
+    };
+
+
+    const inspectObj = (obj, path, returnValue) => {
+        //const path = 'contents.article.count';
+        return path.split('.').reduce((acc, cur) => {
+            if(acc){
+                return acc[cur]
+            }
+            return returnValue;
+
+        }, obj)
+    }
+
+    const courses = [js, node, react];
+
+    courses.forEach(course => {
+        console.log(`${course.name} has - Article: ${inspectObj(course, 'contents.article.count')}`);
+
+    });
+
+    courses.forEach(course => {
+        console.log(`${course.name} has - Video: ${inspectObj(course, 'contents.video.count')}`);
+
+    });
+
+
+
+  
+
+
+</script>
