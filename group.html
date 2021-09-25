@@ -1,0 +1,21 @@
+<script>
+    const words = [
+        'one',
+        'two',
+        'three',
+        'four',
+        'five'
+    ];
+
+    const group = words.reduce((acc, cur) => {
+        const len = cur.length
+        if(acc[len]){
+            acc[len].push(cur)
+        }
+        else{
+            acc[len] = [cur]
+        }
+    },{});
+
+    console.log(group)
+</script>
