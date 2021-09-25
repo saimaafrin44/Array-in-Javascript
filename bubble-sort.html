@@ -1,0 +1,53 @@
+<script>
+    const team = [
+        {
+            id : 1,
+            name : "bmofij"
+        },
+        {
+            id : 4,
+            name : "amofij2"
+        },
+        {
+            id : 6,
+            name : "dmofij3"
+        },
+        {
+            id : 2,
+            name : "cmofij4"
+        },
+        {
+            id : 8,
+            name : "vmofij6"
+        },
+    ];
+
+    const bubbleSort = (array, cb) => {
+        for (let i = 0; i < array.length - 1; i++) {
+            for( let j = 0; j < array.length - 1; j++){
+                if (cb(array[j], array[j+1]) > 0){
+                    let temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+    };
+    const arr = [100,94,6,78,34,56,94];
+    bubbleSort(arr, (a,b) => a-b);
+    console.log(arr);
+    bubbleSort(arr, (a,b) => b-a); //decrement
+    console.log(arr);
+
+    bubbleSort(team, (a,b) => a.id - b.id);
+    console.log(team);
+
+    bubbleSort(team, (a,b) => {
+        if (a.name > b.name) return 1;
+        if (a.name < b.name) return -1;
+        return 0;
+    });
+
+    console.log(team);
+
+</script>
